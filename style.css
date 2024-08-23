@@ -1,0 +1,25 @@
+#imageContainer {
+  display: flex;
+}
+
+img {
+  height: 15vh;
+}
+
+#displayImage > * {
+  height: 90vh;
+  box-sizing: border-box;
+}
+
+@media (min-width: 800px) {
+  #imageContainer {
+    display: flex;
+  }
+  img {
+    height: 15vh;
+  }
+  #displayImage > * {
+    height: 90vh;
+    box-sizing: border-box;
+  }
+}
