@@ -8,14 +8,25 @@ body {
 }
 
 #thumbnailContainer {
+  height: 8vh;
+  width: 70vw;
   display: flex;
-  box-sizing: border-box;
-  flex-direction: row;
-
-}
-
-img {
-  height: 15vh;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.459);
+  bottom: 3vh;
+  left: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+  transform: translateX(-50%);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 #display img {
@@ -23,7 +34,28 @@ img {
   height: 100vh;
   overflow: hidden;
   object-fit: cover;
+  position: absolute;
 }
 
+img {
+  height: 15vh;
+}
 
-/*MAKE THUMBCONTAINER FIT SCREEN
+@media (min-width: 600px) {
+  #thumbnailContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90px;
+    width: 400px;
+    position: absolute;
+    top: 3vh;
+    bottom: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  img {
+    height: 15vh;
+  }
+}

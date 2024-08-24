@@ -25,8 +25,8 @@ let images = [
   },
 ];
 
-const thumbNailContainer = document.getElementById("thumbnailContainer");
-const displayImage = document.getElementById("displayImage");
+const thumbnailContainer = document.getElementById("thumbnailContainer");
+const display = document.getElementById("display");
 
 function createThumbnails() {
   images.forEach(function (image) {
@@ -43,14 +43,13 @@ function createThumbnails() {
     });
 
     imageElement.addEventListener("keydown", function (event) {
-      console.log(event);
       if (event.code === "Enter") {
         createBigImage(image);
         console.log(`Clicked on ${image.alt}`);
       }
     });
 
-    thumbNailContainer.appendChild(imageElement);
+    thumbnailContainer.appendChild(imageElement);
   });
 }
 
