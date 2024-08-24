@@ -1,25 +1,29 @@
-#imageContainer {
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#thumbnailContainer {
   display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+
 }
 
 img {
   height: 15vh;
 }
 
-#displayImage > * {
-  height: 90vh;
-  box-sizing: border-box;
+#display img {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  object-fit: cover;
 }
 
-@media (min-width: 600px) {
-  #imageContainer {
-    display: flex;
-  }
-  img {
-    height: 15vh;
-  }
-  #displayImage > * {
-    height: 90vh;
-    box-sizing: border-box;
-  }
-}
+
+/*MAKE THUMBCONTAINER FIT SCREEN

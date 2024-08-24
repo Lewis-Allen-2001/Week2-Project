@@ -1,34 +1,34 @@
 let images = [
   {
-    url: "./assets/Tokyo1.jpg",
+    url: "https://images.unsplash.com/photo-1608874973406-b6e3babbbf2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRva3lvJTIwbmlnaHR8ZW58MHx8MHx8fDA%3D",
     alt: "Rain puddle in Tokyo , Japan",
   },
   {
-    url: "./assets/Tokyo2.jpg",
+    url: "https://images.unsplash.com/photo-1608874973277-a34ed4aba3f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRva3lvJTIwbmlnaHR8ZW58MHx8MHx8fDA%3D",
     alt: "Giant red sign illuminating the Tokyo night sky",
   },
   {
-    url: "./assets/Tokyo3.jpg",
+    url: "https://images.unsplash.com/photo-1705577827337-3b7c132f79eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRva3lvJTIwbmlnaHR8ZW58MHx8MHx8fDA%3D",
     alt: "a Bright seven eleven sign",
   },
   {
-    url: "./assets/Tokyo4.jpg",
+    url: "https://images.unsplash.com/photo-1660292318896-0c684c801e3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG9reW8lMjBuaWdodHxlbnwwfHwwfHx8MA%3D%3D",
     alt: "Tokyo night Skyline",
   },
   {
-    url: "./assets/Tokyo5.jpg",
+    url: "https://images.unsplash.com/photo-1586165877141-3dbcfc059283?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9reW8lMjBuaWdodHxlbnwwfHwwfHx8MA%3D%3D",
     alt: "Dark Tokyo street , all stores are shut with nothing but street light illuminating",
   },
   {
-    url: "./assets/Tokyo6.jpg",
+    url: "https://images.unsplash.com/photo-1531164442814-c81a813fd9a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2FidWtpY2hvfGVufDB8fDB8fHww",
     alt: "The entrance to kabukicho as the archway sign brightly shines",
   },
 ];
 
-const imageContainer = document.getElementById("imageContainer");
+const thumbNailContainer = document.getElementById("thumbnailContainer");
 const displayImage = document.getElementById("displayImage");
 
-function createImages() {
+function createThumbnails() {
   images.forEach(function (image) {
     let imageElement = document.createElement("img");
 
@@ -39,29 +39,29 @@ function createImages() {
 
     imageElement.addEventListener("click", function () {
       console.log(`Clicked on ${image.alt}`);
-      createLargeImage(image);
+      createBigImage(image);
     });
 
     imageElement.addEventListener("keydown", function (event) {
       console.log(event);
       if (event.code === "Enter") {
-        createLargeImage(image);
+        createBigImage(image);
+        console.log(`Clicked on ${image.alt}`);
       }
     });
 
-    imageContainer.appendChild(imageElement);
+    thumbNailContainer.appendChild(imageElement);
   });
 }
 
-createImages();
+createThumbnails();
 
-function createLargeImage(imageParams) {
-  displayImage.innerHTML = "";
+function createBigImage(imageParams) {
+  display.innerHTML = "";
+  const bigImageElement = document.createElement("img");
 
-  const largeImageElement = document.createElement("img");
+  bigImageElement.src = imageParams.url;
+  bigImageElement.alt = imageParams.alt;
 
-  largeImageElement.src = imageParams.url;
-  largeImageElement.alt = imageParams.alt;
-
-  displayImage.appendChild(largeImageElement);
+  display.appendChild(bigImageElement);
 }
