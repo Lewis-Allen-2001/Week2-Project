@@ -46,6 +46,25 @@ img {
     flex-direction: column;
     flex-wrap: wrap;
     height: 90px;
+    width: 600px;
+    position: absolute;
+    top: 3vh;
+    bottom: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  img {
+    height: 15vh;
+  }
+}
+
+@media (min-width: 400px) {
+  #thumbnailContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90px;
     width: 400px;
     position: absolute;
     top: 3vh;
