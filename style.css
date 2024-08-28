@@ -78,3 +78,29 @@ img {
     height: 15vh;
   }
 }
+
+@media (min-device-width: 320px) {
+  #thumbnailContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90px;
+    width: 400px;
+    position: absolute;
+    top: 3vh;
+    bottom: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  img {
+    height: 15vh;
+  }
+  #display img {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    position: absolute;
+  }
+}
